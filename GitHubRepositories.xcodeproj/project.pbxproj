@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		282F86B62A2608F000383F5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86B52A2608F000383F5E /* AppDelegate.swift */; };
 		282F86B82A2608F000383F5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86B72A2608F000383F5E /* SceneDelegate.swift */; };
-		282F86BA2A2608F000383F5E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86B92A2608F000383F5E /* AuthViewController.swift */; };
 		282F86BF2A2608F200383F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282F86BE2A2608F200383F5E /* Assets.xcassets */; };
 		282F86C22A2608F200383F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F86C02A2608F200383F5E /* LaunchScreen.storyboard */; };
 		282F86CB2A260A2B00383F5E /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86C92A260A2B00383F5E /* RepositoriesListViewController.swift */; };
 		282F86CC2A260A2B00383F5E /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282F86CA2A260A2B00383F5E /* RepositoriesListViewController.xib */; };
 		282F86D02A260A8400383F5E /* RepositoryDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86CE2A260A8400383F5E /* RepositoryDetailInfoViewController.swift */; };
 		282F86D12A260A8400383F5E /* RepositoryDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282F86CF2A260A8400383F5E /* RepositoryDetailInfoViewController.xib */; };
+		282F86DC2A26150400383F5E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F86DA2A26150400383F5E /* AuthViewController.swift */; };
+		282F86DD2A26150400383F5E /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282F86DB2A26150400383F5E /* AuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		282F86B22A2608F000383F5E /* GitHubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282F86B52A2608F000383F5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282F86B72A2608F000383F5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		282F86B92A2608F000383F5E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		282F86BE2A2608F200383F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282F86C12A2608F200383F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282F86C32A2608F200383F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		282F86CA2A260A2B00383F5E /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
 		282F86CE2A260A8400383F5E /* RepositoryDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailInfoViewController.swift; sourceTree = "<group>"; };
 		282F86CF2A260A8400383F5E /* RepositoryDetailInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailInfoViewController.xib; sourceTree = "<group>"; };
+		282F86DA2A26150400383F5E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		282F86DB2A26150400383F5E /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				282F86D32A260AF700383F5E /* App */,
-				282F86B92A2608F000383F5E /* AuthViewController.swift */,
+				282F86D82A2612EA00383F5E /* Auth */,
 				282F86D22A260A8A00383F5E /* RepositoryDetailInfo */,
 				282F86CD2A260A3B00383F5E /* RepositoriesList */,
-				282F86BE2A2608F200383F5E /* Assets.xcassets */,
-				282F86C02A2608F200383F5E /* LaunchScreen.storyboard */,
-				282F86C32A2608F200383F5E /* Info.plist */,
+				282F86D92A26133E00383F5E /* Helpers */,
 			);
 			path = GitHubRepositories;
 			sourceTree = "<group>";
@@ -98,6 +98,25 @@
 				282F86B72A2608F000383F5E /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		282F86D82A2612EA00383F5E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				282F86DA2A26150400383F5E /* AuthViewController.swift */,
+				282F86DB2A26150400383F5E /* AuthViewController.xib */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		282F86D92A26133E00383F5E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				282F86BE2A2608F200383F5E /* Assets.xcassets */,
+				282F86C02A2608F200383F5E /* LaunchScreen.storyboard */,
+				282F86C32A2608F200383F5E /* Info.plist */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +179,7 @@
 			files = (
 				282F86C22A2608F200383F5E /* LaunchScreen.storyboard in Resources */,
 				282F86BF2A2608F200383F5E /* Assets.xcassets in Resources */,
+				282F86DD2A26150400383F5E /* AuthViewController.xib in Resources */,
 				282F86CC2A260A2B00383F5E /* RepositoriesListViewController.xib in Resources */,
 				282F86D12A260A8400383F5E /* RepositoryDetailInfoViewController.xib in Resources */,
 			);
@@ -172,9 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				282F86BA2A2608F000383F5E /* AuthViewController.swift in Sources */,
 				282F86B62A2608F000383F5E /* AppDelegate.swift in Sources */,
 				282F86CB2A260A2B00383F5E /* RepositoriesListViewController.swift in Sources */,
+				282F86DC2A26150400383F5E /* AuthViewController.swift in Sources */,
 				282F86D02A260A8400383F5E /* RepositoryDetailInfoViewController.swift in Sources */,
 				282F86B82A2608F000383F5E /* SceneDelegate.swift in Sources */,
 			);
@@ -317,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U824AND8KD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GitHubRepositories/Info.plist;
+				INFOPLIST_FILE = GitHubRepositories/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -348,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U824AND8KD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GitHubRepositories/Info.plist;
+				INFOPLIST_FILE = GitHubRepositories/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

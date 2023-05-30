@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let rootVC = AuthViewController()
         window?.rootViewController = rootVC
+        window?.overrideUserInterfaceStyle = .dark
         window?.makeKeyAndVisible()
     }
 
