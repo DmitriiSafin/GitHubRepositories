@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="GitHubRepositories" customModuleProvider="target">
             <connections>
+                <outlet property="buttonConstraint" destination="XKY-Q8-vhH" id="OBb-8y-5Ey"/>
                 <outlet property="invalidTokenLabel" destination="HsZ-KL-wSG" id="INb-ti-uyL"/>
                 <outlet property="signInButton" destination="8kh-Eh-Gw0" id="gEj-mU-nMl"/>
                 <outlet property="tokenTextField" destination="hhs-qu-8Ri" id="b0E-1h-Tau"/>

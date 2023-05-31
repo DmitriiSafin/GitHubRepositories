@@ -13,12 +13,13 @@ final class AuthViewController: UIViewController {
     @IBOutlet weak var tokenTextField: UITextField!
     @IBOutlet weak var invalidTokenLabel: UILabel!
     @IBOutlet weak var signInButton: UIButton!
-    
+    @IBOutlet weak var buttonConstraint: NSLayoutConstraint!
     
     //MARK: - Initial
     override func viewDidLoad() {
         super.viewDidLoad()
         tokenTextField.delegate = self
+        keyboardNotifications()
         setupUI()
     }
 
@@ -45,38 +46,45 @@ extension AuthViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        animateButton(signInButton, up: true)
-        tokenTextField.layer.borderColor = UIColor(red: 0.345, green: 0.651, blue: 1, alpha: 1).cgColor
+}
+
+//MARK: - KeyboardNotifications
+extension AuthViewController {
+    
+    private func keyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        tokenTextField.layer.borderColor = UIColor(red: 0.129, green: 0.149, blue: 0.176, alpha: 1).cgColor
-//        animateButton(signInButton, up: false)
-//    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        tokenTextField.layer.borderColor = UIColor(red: 0.129, green: 0.149, blue: 0.176, alpha: 1).cgColor
-        animateButton(signInButton, up: false)
-        return true
-    }
-    
-    private func animateButton(_ button: UIButton, up: Bool) {
-        let movementDistance: CGFloat = -260
+    @objc private func keyboardWillShow(notification: Notification) {
+        tokenTextField.layer.borderColor = UIColor(
+            red: 0.345, green: 0.651, blue: 1, alpha: 1
+        ).cgColor
         
-        var movement: CGFloat = 0
-        if up {
-            movement = movementDistance
-        } else {
-            movement = -movementDistance
-        }
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState]) {
-            button.frame = button.frame.offsetBy(dx: 0, dy: movement)
+        let userInfo = notification.userInfo
+        if let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardSize.cgRectValue.height
+            buttonConstraint.constant = 30 + keyboardHeight
+            let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.3
+            UIView.animate(withDuration: animationDuration) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
+    @objc private func keyboardWillHide(notification: Notification) {
+        tokenTextField.layer.borderColor = UIColor(
+            red: 0.129, green: 0.149, blue: 0.176, alpha: 1
+        ).cgColor
+        buttonConstraint.constant = 50
+        let userInfo = notification.userInfo
+        let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.3
+        UIView.animate(withDuration: animationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
 }
 
 //MARK: - SetupUI
@@ -91,5 +99,3 @@ extension AuthViewController {
         invalidTokenLabel.isHidden = true
     }
 }
-
-
