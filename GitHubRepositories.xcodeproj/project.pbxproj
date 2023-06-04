@@ -66,8 +66,8 @@
 			children = (
 				282F86D32A260AF700383F5E /* App */,
 				282F86D82A2612EA00383F5E /* Auth */,
-				282F86D22A260A8A00383F5E /* RepositoryDetailInfo */,
 				282F86CD2A260A3B00383F5E /* RepositoriesList */,
+				282F86D22A260A8A00383F5E /* RepositoryDetailInfo */,
 				282F86D92A26133E00383F5E /* Helpers */,
 			);
 			path = GitHubRepositories;

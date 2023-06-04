@@ -29,6 +29,8 @@ final class AuthViewController: UIViewController {
     }
 
     @IBAction func signInTapped(_ sender: UIButton) {
+        let vc = RepositoriesListViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
