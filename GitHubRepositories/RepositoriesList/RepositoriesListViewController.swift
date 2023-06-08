@@ -15,7 +15,7 @@ final class RepositoriesListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.register(UINib(nibName: "RepositoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoriesTableViewCell")
     }
 
 
@@ -25,13 +25,19 @@ final class RepositoriesListViewController: UIViewController {
 }
 
 extension RepositoriesListViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoriesTableViewCell", for: indexPath) as? RepositoriesTableViewCell
+        
+        cell?.nameLabel.text = "wfgsrweewe"
+        cell?.detailsLabel.text = "dsgdtdg rhrdhdr hrehr rhre hreth rereh r hdafad"
+        cell?.languageLabel.text = "Kotlin"
+        
+        return cell ?? UITableViewCell()
     }
     
     
