@@ -9,6 +9,12 @@ import UIKit
 
 class RepositoryDetailInfoViewController: UIViewController {
 
+    @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var licenseLabel: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var forksLabel: UILabel!
+    @IBOutlet weak var watchersLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

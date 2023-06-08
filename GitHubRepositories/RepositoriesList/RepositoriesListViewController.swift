@@ -40,5 +40,9 @@ extension RepositoriesListViewController: UITableViewDelegate, UITableViewDataSo
         return cell ?? UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC = RepositoryDetailInfoViewController()
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
     
 }
