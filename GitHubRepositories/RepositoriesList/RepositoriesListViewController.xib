@@ -20,42 +20,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob5-q6-gzE">
-                    <rect key="frame" x="0.0" y="50" width="375" height="44"/>
-                    <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                    <items>
-                        <navigationItem title="Repositories" id="jXu-my-biw">
-                            <barButtonItem key="rightBarButtonItem" title="Item" image="input" id="C0Q-vB-2Yt">
-                                <connections>
-                                    <action selector="inputButton:" destination="-1" id="URj-JQ-vzt"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-Ew-8JU">
-                    <rect key="frame" x="0.0" y="94" width="375" height="684"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="bjM-Ew-8JU" firstAttribute="top" secondItem="ob5-q6-gzE" secondAttribute="bottom" id="I1N-DC-TRH"/>
-                <constraint firstItem="ob5-q6-gzE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Q0T-o9-Ugq"/>
+                <constraint firstItem="bjM-Ew-8JU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DLG-tc-x6v"/>
                 <constraint firstItem="bjM-Ew-8JU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="S6a-3d-dmx"/>
                 <constraint firstItem="bjM-Ew-8JU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZXu-dH-STj"/>
                 <constraint firstItem="bjM-Ew-8JU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cjF-a7-szH"/>
-                <constraint firstItem="ob5-q6-gzE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dBb-S3-6sf"/>
-                <constraint firstItem="ob5-q6-gzE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qjn-s8-6a1"/>
-                <constraint firstItem="bjM-Ew-8JU" firstAttribute="top" secondItem="ob5-q6-gzE" secondAttribute="bottom" id="wfP-bR-tYh"/>
             </constraints>
             <point key="canvasLocation" x="128.80000000000001" y="-11.083743842364532"/>
         </view>
         <navigationItem title="Title" id="RlN-VW-bLH"/>
     </objects>
     <resources>
-        <image name="input" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

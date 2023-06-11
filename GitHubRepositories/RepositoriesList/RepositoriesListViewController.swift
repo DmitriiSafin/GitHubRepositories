@@ -11,15 +11,23 @@ final class RepositoriesListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private lazy var backButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        button.setImage(UIImage(named: "input"), for: .normal)
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RepositoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoriesTableViewCell")
+        setupUI()
     }
 
-
-    @IBAction func inputButton(_ sender: UIBarButtonItem) {
+    @objc private func backButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }
@@ -45,4 +53,14 @@ extension RepositoriesListViewController: UITableViewDelegate, UITableViewDataSo
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
+}
+
+extension RepositoriesListViewController {
+    
+    private func setupUI() {
+        title = "Repositories"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
 }
